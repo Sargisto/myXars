@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <h1 class="mainTittle">Ապրանքներ</h1>
+  <div class="row">
+    
+    <div class="col-10"> 
+      <div class="container itemsTable text-center">
+        <div class="row">
+          <div class="col">
+            Ապրանք
+          </div>
+          <div class="col">
+            Գին
+          </div>
+          <div class="col">
+            Գումար
+          </div>
+          <div class="col">
+            Եկամուտ
+          </div>
+          <div class="col">
+            Քանակ
+          </div>
+        </div>
+        <hr>
+        <div class="row" *ngFor="let item of items">
+          <div class="col">
+            {{item.name}}
+          </div>
+          <div class="col" name="price">
+            {{item.price}}
+          </div>
+          <div class="col" name="money">
+            {{item.money}}
+          </div>
+          <div class="col" name="allProfit">
+            {{item.allICountProfit}}
+          </div>
+          <div class="col">
+            <input [(ngModel)]="item.count" (ngModelChange)="calc(item)" type="number">
+          </div>
+          <hr>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            Ընդամենը
+          </div>
+          <div class="col">
+            
+          </div>
+          <div class="col">
+            Առևտուր {{sumMoney}}
+          </div>
+          <div class="col">
+            Եկամուտ օրվա {{sumProfit}}
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+
+    <div class="col-1">
+      <div class="panel-body ">
+        <br>
+        <br>
+        <button class="mb-sm btn btn-danger butLog" type="button" (click)='logOut()'> Դուրս գալ </button>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
